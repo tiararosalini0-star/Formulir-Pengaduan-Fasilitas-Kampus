@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulir Pengaduan Fasilitas Kampus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="halaman">
+    <header class="kepala">
+      <h1>Formulir Pengaduan Fasilitas Kampus</h1>
+      <p>Pelaporan kerusakan sarana &amp; prasarana kampus</p>
+    </header>
+
+    <!-- HTML: Tabel Status Perbaikan -->
+    <section aria-labelledby="judul-status">
+      <h2 id="judul-status">Status Perbaikan Laporan</h2>
+      <div class="tabel-bungkus">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Lokasi</th>
+              <th>Kerusakan</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Gedung A</td>
+              <td>AC</td>
+              <td><span class="status proses">Dalam Proses</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Lab Komputer</td>
+              <td>Proyektor</td>
+              <td><span class="status selesai">Selesai</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Kantin</td>
+              <td>Meja</td>
+              <td><span class="status menunggu">Menunggu</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Ganti href dengan alamat SOP kampus yang sebenarnya -->
+      <p class="tautan-sop">
+        <a href="https://www.binus.ac.id" target="_blank" rel="noopener">Standar Operasional Kampus &#8599;</a>
+      </p>
+    </section>
+
+    <!-- Form Pengaduan -->
+    <section class="kartu-form" aria-labelledby="judul-form">
+      <h2 id="judul-form">Form Pengaduan</h2>
+
+      <form id="form-pengaduan" novalidate>
+        <div class="bidang">
+          <label for="lokasi">Lokasi</label>
+          <input type="text" id="lokasi" name="lokasi" placeholder="Contoh: Ruang 401, Gedung B" required>
+        </div>
+
+        <div class="bidang">
+          <label for="keparahan">Tingkat Keparahan</label>
+          <select id="keparahan" name="keparahan">
+            <option value="ringan">Ringan</option>
+            <option value="sedang" selected>Sedang</option>
+            <option value="berat">Berat</option>
+          </select>
+        </div>
+
+        <div class="bidang">
+          <label for="deskripsi">Deskripsi</label>
+          <textarea id="deskripsi" name="deskripsi" rows="3" placeholder="Jelaskan kerusakan yang terjadi"></textarea>
+          <p id="penghitung" class="penghitung" aria-live="polite">0 karakter · minimal 20</p>
+        </div>
+
+        <button type="submit" class="tombol">Kirim Laporan</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

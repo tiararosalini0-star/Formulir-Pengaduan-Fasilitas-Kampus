@@ -1,0 +1,163 @@
+:root {
+  --hijau: #3f7a55;
+  --hijau-tua: #2f5f42;
+  --hijau-muda: #e7f1ea;
+  --teks: #1b1f1c;
+  --teks-redup: #5f6a63;
+  --garis: #dfe5e0;
+  --latar: #f6f8f6;
+  --kartu: #ffffff;
+  --merah: #b3372e;
+  --kuning-bg: #fdf0c9;
+  --kuning-teks: #7a5a00;
+  --abu-bg: #eceeed;
+  --abu-teks: #4b524e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--teks);
+  background: var(--latar);
+  line-height: 1.5;
+}
+
+.halaman {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+}
+
+.kepala h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  letter-spacing: -0.02em;
+}
+
+.kepala p {
+  margin: 0 0 32px;
+  color: var(--teks-redup);
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+/* Tabel */
+.tabel-bungkus {
+  overflow-x: auto;
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 460px;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+thead th {
+  background: #f0f3f1;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+tbody tr + tr td { border-top: 1px solid var(--garis); }
+
+.status {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.status.proses   { background: var(--kuning-bg); color: var(--kuning-teks); }
+.status.selesai  { background: var(--hijau-muda); color: var(--hijau-tua); }
+.status.menunggu { background: var(--abu-bg);     color: var(--abu-teks); }
+
+/* Anotasi CSS: link tanpa garis bawah, berubah warna saat disorot */
+a {
+  color: var(--hijau);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c2410c;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--hijau);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.tautan-sop { margin: 16px 0 32px; }
+
+/* Form */
+.kartu-form {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 420px;
+}
+
+.bidang { margin-bottom: 16px; }
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.88rem;
+  color: var(--teks-redup);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--teks);
+  background: #fff;
+  border: 1px solid #cfd7d1;
+  border-radius: 8px;
+}
+
+textarea { resize: vertical; }
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--hijau);
+  outline-offset: 1px;
+  border-color: var(--hijau);
+}
+
+.penghitung {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  color: var(--teks-redup);
+}
+.penghitung.cukup  { color: var(--hijau); }
+.penghitung.kurang { color: var(--merah); }
+
+input.salah, textarea.salah { border-color: var(--merah); }
+
+.tombol {
+  width: 100%;
+  padding: 12px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--hijau);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tombol:hover { background: var(--hijau-tua); }
+.tombol:focus-visible { outline: 3px solid var(--hijau-muda); outline-offset: 2px; }
