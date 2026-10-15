@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="halaman">
-    <header class="kepala">
+  <!-- Header sticky: tetap di atas saat di-scroll -->
+  <header class="kepala">
+    <div class="kepala-isi">
       <h1>Formulir Pengaduan Fasilitas Kampus</h1>
       <p>Pelaporan kerusakan sarana &amp; prasarana kampus</p>
-    </header>
+    </div>
+  </header>
 
+  <main class="halaman">
     <!-- HTML: Tabel Status Perbaikan -->
     <section aria-labelledby="judul-status">
       <h2 id="judul-status">Status Perbaikan Laporan</h2>
@@ -43,6 +46,30 @@
               <td>3</td>
               <td>Kantin</td>
               <td>Meja</td>
+              <td><span class="status menunggu">Menunggu</span></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Gedung C</td>
+              <td>Kursi</td>
+              <td><span class="status proses">Dalam Proses</span></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Gedung C</td>
+              <td>Lampu</td>
+              <td><span class="status selesai">Selesai</span></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Gedung A</td>
+              <td>Papan Tulis</td>
+              <td><span class="status proses">Dalam Proses</span></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Gedung D</td>
+              <td>PC</td>
               <td><span class="status menunggu">Menunggu</span></td>
             </tr>
           </tbody>
@@ -84,6 +111,16 @@
       </form>
     </section>
   </main>
+
+  <!-- Popup notifikasi -->
+  <div id="popup" class="popup-latar" hidden>
+    <div class="popup-kotak" role="dialog" aria-modal="true" aria-labelledby="popup-judul" aria-describedby="popup-pesan">
+      <div class="popup-ikon" id="popup-ikon" aria-hidden="true"></div>
+      <h3 id="popup-judul"></h3>
+      <p id="popup-pesan"></p>
+      <button type="button" class="tombol" id="popup-tutup">Oke</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
